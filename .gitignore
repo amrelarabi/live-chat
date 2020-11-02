@@ -106,7 +106,8 @@ media/
 *.pyc
 *.db
 *.pid
-
+.DS_Store
+.idea
 # Ignore Django Migrations in Development if you are working on team
 
 # Only for Development only
