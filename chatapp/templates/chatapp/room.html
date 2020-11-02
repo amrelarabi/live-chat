@@ -1,12 +1,29 @@
 <!-- chat/templates/chat/room.html -->
 {% extends 'chatapp/base.html' %}
+{% block title %}
+    Live Chat
+{% endblock %}
 {% block page_title %}
     Chat Room
 {% endblock %}
 {% block content %}
-    <textarea id="chat-log" cols="100" rows="20"></textarea><br/>
-    <input id="chat-message-input" type="text" size="100"/><br/>
-    <input id="chat-message-submit" type="button" value="Send"/>
+    <div class="container">
+        <div class="row">
+            <div class="col-4 offset-4">
+                <div class="form-group">
+                    <textarea class="form-control" id="chat-log" cols="100" rows="10"></textarea>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="chat-message-input" type="text"
+                           placeholder="Type your message here "
+                           size="100"/>
+                </div>
+                <div class="form-group text-center">
+                    <button id="chat-message-submit" class="btn btn-success">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 {% block footer_js %}
     <script>
