@@ -1,0 +1,40 @@
+<!-- chat/templates/chat/index.html -->
+{% extends 'chatapp/base.html' %}
+{% block title %}
+    Live Chat
+{% endblock %}
+{% block page_title %}
+    Signup
+{% endblock %}
+{% block content %}
+    <div class="col-4 offset-4">
+        {% if error_msg %}
+            <div class="alert alert-warning alert-dismissible fade show">
+                {{ error_msg }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endif %}
+        <form action="{% url 'signup' %}" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field.label_tag }} {{ field }}
+                    {% if field.help_text %}
+                        <small class="form-text text-muted">
+                            {{ field.help_text|safe }}
+                        </small>
+                    {% endif %}
+                    {% if field.errors %}
+                        <div class="alert alert-danger">
+                             {{ field.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+{% endblock %}
+
