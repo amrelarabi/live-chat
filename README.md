@@ -1,5 +1,6 @@
 # live-chat
 Simple live chat using sockets in django 
+<img src="https://amrelarabi.tech/wp-content/uploads/2019/11/chat.jpg" alt='Simple live chat app'/>
 <h2>How to run</h2>
 <ul>
 <li> Download the project </li>
